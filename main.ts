@@ -45,6 +45,24 @@ scene.setBackgroundImage(assets.image`Ded Chad Stage`)
 let ded_chad = sprites.create(assets.image`ded chad`, SpriteKind.Player)
 ded_chad.setPosition(75, 90)
 pause(500)
+game.setDialogCursor(img`
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    `)
 game.showLongText("...", DialogLayout.Bottom)
 pause(500)
 game.setDialogCursor(assets.image`scared fan 1`)
@@ -74,5 +92,11 @@ game.setDialogCursor(img`
     `)
 game.splash("Chad has died. It is up to", "you to find out who did it")
 sprites.destroy(ded_chad)
-let mySprite = sprites.create(assets.image`you`, SpriteKind.Player)
 scene.setBackgroundImage(assets.image`internal thoughts moment`)
+pause(500)
+story.showPlayerChoices("Look for clues?", "Ask around for more information?")
+if (story.checkLastAnswer("Look for clues?")) {
+    scene.setBackgroundImage(assets.image`clue time baby`)
+} else {
+	
+}
