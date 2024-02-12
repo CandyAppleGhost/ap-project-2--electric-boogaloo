@@ -7,7 +7,11 @@ namespace SpriteKind {
     export const bodyclue1 = SpriteKind.create()
 }
 sprites.onOverlap(SpriteKind.Player, SpriteKind.stageclue1, function (sprite, otherSprite) {
-	
+    game.splash("Would you like to search ", "the stage for clues?")
+    story.showPlayerChoices("Yes", "No")
+    if (story.checkLastAnswer("Yes")) {
+        scene.setBackgroundImage(assets.image`backstage entrance`)
+    }
 })
 let selector_baby: Sprite = null
 let body_clue_1: Sprite = null
@@ -113,7 +117,7 @@ if (story.checkLastAnswer("Look for clues")) {
     fans_clue_1 = sprites.create(assets.image`fans clue 1`, SpriteKind.fansclue1)
     fans_clue_1.setPosition(78, 36)
     body_clue_1 = sprites.create(assets.image`body clue 1`, SpriteKind.bodyclue1)
-    body_clue_1.setPosition(128, 42)
+    body_clue_1.setPosition(131, 46)
     selector_baby = sprites.create(assets.image`click click`, SpriteKind.Player)
     selector_baby.setPosition(130, 90)
     controller.moveSprite(selector_baby)
